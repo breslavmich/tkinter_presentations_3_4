@@ -8,6 +8,7 @@ amount_pressed = 0
 
 
 def yes_stupid():
+    """Handling the user clicking on 'yes'"""
     button_yes.destroy()
     button_no.destroy()
     frame_button_1.destroy()
@@ -16,6 +17,7 @@ def yes_stupid():
 
 
 def no_stupid():
+    """Handling the user clicking on 'no'"""
     global amount_pressed
     if amount_pressed >= 7:
         sure_stupid()
@@ -27,6 +29,7 @@ def no_stupid():
 
 
 def sure_stupid():
+    """Executed when the user clicks on 'no' too many times"""
     button_no.destroy()
     frame_button_2.destroy()
     label.config(text='Are you sure?')
@@ -39,7 +42,6 @@ def main():
     window_width = 350
     window_height = 350
     root.geometry("{}x{}".format(window_width, window_height))
-    bg_image = ImageTk.PhotoImage(Image.open('bg_image.jpeg').resize((350, 202)))
     root.resizable(False, False)
     root.configure(bg='lightblue')
     tk.Label(text='', bg='lightblue').pack()
